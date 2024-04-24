@@ -1,34 +1,25 @@
 'use client'
 
 import { useState, useEffect } from "react"
-import fetchGoogleSheetData from "../functions/fetch-googlesheet"
-
 export default function LogInBox(){
 
-  const [ email, setEmail] = useState('')
-  const [ password, setPassword] = useState('')
+  const email = "pruebaxepelin@gmail.com"
+  const password = "1234"
+  const [ inputEmail, setinputEmail] = useState('')
+  const [ inputPassword, setinputPassword] = useState('')
 
   function handleEmailChange(event){
-    setEmail(event.target.value);
+    setinputEmail(event.target.value);
   }
   function handlePasswordChange(event){
-    setPassword(event.target.value)
+    setinputPassword(event.target.value)
   }
 
   function checkLoginCredentials(event){
-    console.log("el email a submitir es", email)
-    console.log("la password a submitir es", password)
+    if(email == inputEmail && inputPassword == password) 
+    console.log("el email a submitir es", inputEmail)
+    console.log("la password a submitir es", inputPassword)
   }
-
-  useEffect(  () => {
-    console.log("el process env es", process.env.NEXT_PUBLIC_TESTEO)
-    fetchGoogleSheetData();
-  }, )
-
-  const fetchGoogleSheetInformation = async () => {
-    // const response = await 
-  }
-
 
   return(
     <div className="relative flex min-h-screen text-gray-800 antialiased flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">

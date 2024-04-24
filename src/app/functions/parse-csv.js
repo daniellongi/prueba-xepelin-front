@@ -1,3 +1,4 @@
+
 export default function parseCSV(csvText) {
   const rows = csvText.split(/\r?\n/); 
   const headers = rows[0].split(','); 
