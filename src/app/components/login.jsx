@@ -1,4 +1,7 @@
+'use client'
+
 import { useState, useEffect } from "react"
+import fetchGoogleSheetData from "../functions/fetch-googlesheet"
 
 export default function LogInBox(){
 
@@ -8,7 +11,6 @@ export default function LogInBox(){
   function handleEmailChange(event){
     setEmail(event.target.value);
   }
-
   function handlePasswordChange(event){
     setPassword(event.target.value)
   }
@@ -18,8 +20,9 @@ export default function LogInBox(){
     console.log("la password a submitir es", password)
   }
 
-  useEffect( () => {
+  useEffect(  () => {
     console.log("el process env es", process.env.NEXT_PUBLIC_TESTEO)
+    fetchGoogleSheetData();
   }, )
 
   const fetchGoogleSheetInformation = async () => {
