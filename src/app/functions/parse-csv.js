@@ -5,6 +5,7 @@ export default function parseCSV(csvText) {
   const data = []; 
   for (let i = 1; i < rows.length; i++) {
       const rowData = rows[i].split(','); 
+      console.log("el row data es", rowData);
       const rowObject = {};
       for (let j = 0; j < headers.length; j++) {
           rowObject[headers[j]] = rowData[j];
